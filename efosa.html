@@ -9,7 +9,7 @@
     </head>
     <body>
     <div class="header">
-        <h1>Efosa</h1>
+        <h1 onclick="this.innerHTML = 'Daddy boy' ">Efosa</h1>
     </div>
     <div class="row">
         <div class="col-3 menu">
@@ -20,9 +20,9 @@
             <li>The Personality</li>
           </ul>
           <p>To get access to Efosa you'll need to fill a form.</p>
-          <form action="actionpage_php">
+          <form  name="myForm" onsubmit="return validateForm()" method="post">
             <label for="fname">Firstname</label><br>
-            <input type="text" id="fname" name="fname">
+            <input type="text" id="fname" name="fname" required>
             <label for="lname">Lastname</label>
             <input type="text" id="lname" name="lname">
             <label for="email">Your Email</label>
@@ -33,6 +33,10 @@
             <input type="tel" id="num" name="num"> 
             <input type="button" value="Submit">
           </form>
+          <p>Please input a number</p>
+          <input id="numb" required onfocus="myFunction(this)">
+          <button type="button" onclick="myFunction()">Submit</button>
+          <p id="num1"></p>
         </div>
       
         <div class="col-6">
@@ -42,7 +46,7 @@
             <p>He was born on the morning of 16<sup>th</sup>
             of February 2023. He weighed 3.8kg at birth.</p>
 
-            <img  id="myefosa"  src="images/Nosa.jpg" alt="fine boy" width="500" height="360">
+            <img  id="myefosa" onmousedown="mum()" onmouseup="me()" src="images/Nosa.jpg" alt="fine boy" width="500" height="360">
             
             <h2>A table of my family</h2>
             <p>This a table of my family members and their Relationship with me</p>
@@ -101,7 +105,7 @@
           <div class="aside">
             <h2>Who is Efosa</h2>
             <p>Efosa is a young fair boy.</p>
-            <h2>Where is Efosa from</h2>
+            <h2 onclick="this.innerHTML = 'States of origin' ">Where is Efosa from</h2>
             <p>Efosa is from Edo and Rivers states.</p>
             <h2>How can we reach Efosa</h2>
             <p>You can reach Efosa from all over the world on his mobile or email.</p>
@@ -109,7 +113,7 @@
         </div>
       </div>
       
-      <div class="footer">
+      <div id="foot" class="footer">
         <p>you can reach Efosa on his <a href="kenekha@gmail.com">Email</a></p>
         <p>or call him on his <a href="tel:07062550733">phone number</a>,
         better still at <a href="cv.html">About efosa</a>
@@ -122,6 +126,38 @@
       </div>
       <script>document.getElementById("myefosa").src = "images/starboy.jpg" 
       document.getElementById("mydate").innerHTML = "created : " + Date();
+      function myFunction() {
+        let x = document.getElementById("numb").value;
+        let text;
+        if (isNaN(x) || x < 1 || x > 20) {
+          text = "Input is not valid"
+        } else {
+          text = "Input is correct"
+        }
+document.getElementById("num1").innerHTML = text;
+      }
+      function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+function myFunction(x) {
+  x.style.background = "green";
+}
+function mum() {
+  document.getElementById('myefosa').src = "images/starmum.jpg";
+}
+function me() {
+  document.getElementById('myimage').src = "images.starboy.jpg";
+}
+const para = document.createElement("p");
+const node = document.createTextNode("As you can see, i have put  up a lot of info about me");
+para.appendChild(node);
+const element = document.getElementById("foot");
+const child = document.getElementById("mydate")
+element.insertBefore(para,child);
       </script>
       </body>
       </html>
