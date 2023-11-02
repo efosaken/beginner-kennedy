@@ -21,9 +21,9 @@
             <li>The Character</li>
             <li>The Personality</li>
           </ul>
-          <p>To get access to Efosa you'll need to fill a form.</p>
           
-         </div>
+          
+                  </div>
       
         <div class="col-6">
           <h1>The Boy</h1>
@@ -88,7 +88,45 @@
         <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
         <audio src="outfoxing.mp3"></audio>
-
+        <p>To get access to Efosa you'll need to fill a form.</p>
+        <form action="my-handling-form-page" method="post">
+      
+            <ul>
+              <li>
+                <label for="name">Name: <span aria-label="required">*</span></label>
+                <input type="text" id="name" name="user_name" />
+              </li>
+              <li>
+                <label for="mail">Email: <span aria-label="required">*</span></label>
+                <input type="email" id="mail" name="user_email" />
+              </li>
+              <li>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message">Write your message here</textarea>
+              </li>
+              <li class="button">
+                <button type="submit">Submit</button>
+              </li>
+            </ul>
+          
+        </form>
+        <form>
+          <fieldset>
+            <legend>Fruit juice size</legend>
+            <p>
+              <input type="radio" name="size" id="size_1" value="small" />
+              <label for="size_1">Small</label>
+            </p>
+            <p>
+              <input type="radio" name="size" id="size_2" value="medium" />
+              <label for="size_2">Medium</label>
+            </p>
+            <p>
+              <input type="radio" name="size" id="size_3" value="large" />
+              <label for="size_3">Large</label>
+            </p>
+          </fieldset>
+        </form>
        </div>
         </div>
       
