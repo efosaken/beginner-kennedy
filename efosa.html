@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="styles/efosa.css">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <title>Efosa's page</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
     </head>
     <body>
     <div class="header">
@@ -20,24 +22,8 @@
             <li>The Personality</li>
           </ul>
           <p>To get access to Efosa you'll need to fill a form.</p>
-          <form  name="myForm" onsubmit="return validateForm()" method="post">
-            <label for="fname">Firstname</label><br>
-            <input type="text" id="fname" name="fname" required>
-            <label for="lname">Lastname</label>
-            <input type="text" id="lname" name="lname">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email">
-            <label for="pwd">Your password</label>
-            <input type="password" id="pwd" name="pwd">
-            <label for="num">Phone Number</label>
-            <input type="tel" id="num" name="num"> 
-            <input type="button" value="Submit">
-          </form>
-          <p>Please input a number</p>
-          <input id="numb" required onfocus="myFunction(this)">
-          <button type="button" onclick="myFunction()">Submit</button>
-          <p id="num1"></p>
-        </div>
+          
+         </div>
       
         <div class="col-6">
           <h1>The Boy</h1>
@@ -46,7 +32,8 @@
             <p>He was born on the morning of 16<sup>th</sup>
             of February 2023. He weighed 3.8kg at birth.</p>
 
-            <img  id="myefosa" onmousedown="mum()" onmouseup="me()" src="images/Nosa.jpg" alt="fine boy" width="500" height="360">
+            <img  id="myefosa" onmousedown="mum()" onmouseup="me()" onmouseover="us()" onmouseout="dad()" src=
+            "images/Nosa.jpg" alt="fine boy" width="500" height="360">
             
             <h2>A table of my family</h2>
             <p>This a table of my family members and their Relationship with me</p>
@@ -98,7 +85,11 @@
             <td>Great Grandmother</td>
           </tr>
         </table>
-</div>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+        <audio src="outfoxing.mp3"></audio>
+
+       </div>
         </div>
       
         <div class="col-3 right">
@@ -124,41 +115,7 @@
         <p id="mydate"></p>
 <a href="#">Back to top</a>
       </div>
-      <script>document.getElementById("myefosa").src = "images/starboy.jpg" 
-      document.getElementById("mydate").innerHTML = "created : " + Date();
-      function myFunction() {
-        let x = document.getElementById("numb").value;
-        let text;
-        if (isNaN(x) || x < 1 || x > 20) {
-          text = "Input is not valid"
-        } else {
-          text = "Input is correct"
-        }
-document.getElementById("num1").innerHTML = text;
-      }
-      function validateForm() {
-  let x = document.forms["myForm"]["fname"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
-function myFunction(x) {
-  x.style.background = "green";
-}
-function mum() {
-  document.getElementById('myefosa').src = "images/starmum.jpg";
-}
-function me() {
-  document.getElementById('myimage').src = "images.starboy.jpg";
-}
-const para = document.createElement("p");
-const node = document.createTextNode("As you can see, i have put  up a lot of info about me");
-para.appendChild(node);
-const element = document.getElementById("foot");
-const child = document.getElementById("mydate")
-element.insertBefore(para,child);
-      </script>
+      <script src="efosa.js"></script>
       </body>
       </html>
       
