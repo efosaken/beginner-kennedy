@@ -4,7 +4,7 @@ const button = document.getElementById("btn");
 const joke = document.getElementById("joke")
 
 //Api key from apininja.com
-const apiKey = "rY89w3gJMqJG2l0fQHBVMQ==qDrysiIV2H7YUBHM";
+const apiKey = "rY89w3gJMqJG2l0fQHBVMQ==qDrysiIV2H7YUBHM"
 
 //the website the apikey is gotten from
 const url = "https://api.api-ninjas.com/v1/dadjokes?"
