@@ -12,9 +12,9 @@ const options = {
 
  async function getFact() {
     try {
-        fact.innerHTML = "Updating..."
+         fact.innerHTML = "Updating..."
         button.disabled = true;
-        button.innerHTML = "loading"
+        button.innerHTML = "loading..."
         const response  = await fetch(url, options);
     const data = await response.json();
     
